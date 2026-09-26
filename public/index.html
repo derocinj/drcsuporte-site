@@ -1,132 +1,266 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#11171c">
-  <meta name="description" content="Listas de produtos selecionados pela DRC Suporte. Explore categorias e confira os anúncios no Mercado Livre.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08111b" />
   <title>DRC Suporte | Soluções em Informática e Achados</title>
-  <link rel="canonical" href="https://drcsuporte.com.br/">
-  <meta property="og:title" content="DRC Suporte | Soluções em Informática e Achados">
-  <meta property="og:description" content="Confira nossas listas de produtos e automações selecionadas no Mercado Livre.">
+  <meta name="description" content="Confira nossas listas de automações, tecnologia e utilidades no Mercado Livre." />
   <style>
-    :root{--navy:#0b1c30;--blue:#155fa5;--cyan:#38bdf8;--ink:#16243a;--muted:#63738a;--line:#e0e8f1;--bg:#f5f8fc;--white:#fff}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
-    a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #38bdf8;outline-offset:4px}button:focus-visible{outline:3px solid #38bdf8;outline-offset:4px}
-    .wrap{width:min(1130px,calc(100% - 40px));margin-inline:auto}
-    .top{background:var(--navy);color:white}
-    .nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:850;letter-spacing:.02em}
-    .brandmark{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#12a8ed,#1859a2);font-weight:900}
-    .nav-links{display:flex;gap:27px;font-size:14px;color:#d1dbe8;font-weight:650}.nav-links a:hover{color:white}
-    .hero{background:radial-gradient(circle at 87% 14%,#19528a 0%,transparent 40%),linear-gradient(115deg,#0b1c30,#102f53);color:white;overflow:hidden}
-    .hero-inner{min-height:440px;display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center;padding-block:58px 78px}
-    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:850;color:#78d4ff;margin:0 0 20px}
-    h1{font-size:clamp(36px,5vw,59px);line-height:1.08;letter-spacing:-.045em;margin:0 0 20px;max-width:690px}
-    .hero-copy{color:#d4e4f5;max-width:590px;font-size:18px;margin:0 0 28px}
-    .primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#31baf7;color:#05223b;padding:14px 21px;border-radius:12px;font-weight:850;box-shadow:0 8px 25px #0002;transition:transform .15s}.primary:hover{transform:translateY(-2px)}
-    .hero-art{height:290px;position:relative;display:grid;place-items:center}
-    .orb{width:245px;height:245px;border-radius:50%;background:linear-gradient(140deg,#174c83,#0d2b4c);border:1px solid #ffffff28;box-shadow:0 0 0 28px #ffffff08,0 0 0 60px #ffffff05;display:grid;place-items:center}
-    .orb svg{width:132px;height:132px;stroke:#81d9ff;fill:none;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-    .floating{position:absolute;bottom:15px;right:0;background:white;color:var(--ink);border-radius:13px;padding:14px 17px;box-shadow:0 18px 45px #0003;font-size:13px;font-weight:750}
-    .floating small{display:block;color:var(--muted);font-weight:450;margin-top:3px}
-    .section{padding-block:70px 80px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
-    .kicker{color:var(--blue);font-weight:850;font-size:12px;letter-spacing:.15em;text-transform:uppercase;margin:0 0 10px}
-    h2{font-size:clamp(28px,4vw,39px);line-height:1.16;letter-spacing:-.04em;margin:0}
-    .section-head p:last-child{margin:12px 0 0;color:var(--muted)}
-    .counter{background:#e9f3fb;color:#115f9a;border-radius:99px;padding:8px 14px;font-size:12px;font-weight:850;white-space:nowrap}
-    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,315px),1fr));gap:22px}
-    .card{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 30px #102f5310;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
-    .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px #102f531b}
-    .cover{height:178px;background:linear-gradient(135deg,#0f3760,#248ad2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-    .cover:before,.cover:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff24;border-radius:50%}.cover:before{left:-90px;top:-80px}.cover:after{right:-60px;bottom:-130px}
-    .pict{font-size:74px;filter:drop-shadow(0 10px 16px #04274938);z-index:1}
-    .card-body{padding:25px;display:flex;flex-direction:column;flex:1}
-    .card h3{margin:0 0 9px;font-size:21px;letter-spacing:-.025em}
-    .card p{margin:0 0 22px;color:var(--muted);font-size:14px;flex:1}
-    .card-action{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--blue);font-weight:850;font-size:14px}
-    .tag{font-size:11px;color:#5883a8;background:#ecf5fc;padding:6px 10px;border-radius:99px;font-weight:750}
-    .info{background:white;border-block:1px solid var(--line);padding:42px 0}
-    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
-    .info-item{display:flex;gap:13px;align-items:start}.info-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;flex:0 0 40px;color:var(--blue);background:#edf6fe;font-weight:900;font-size:19px}
-    .info h3{font-size:15px;margin:0 0 6px}.info p{color:var(--muted);font-size:13px;line-height:1.5;margin:0}
-    footer{background:#0b1c30;color:#bdcede;padding:30px 0;font-size:13px}.foot{display:flex;gap:18px;justify-content:space-between;align-items:center}
-    .foot b{color:white}.disclosure{max-width:700px}.empty{border:1px dashed #acc1d4;color:var(--muted);padding:28px;border-radius:16px;background:white}
-    @media(max-width:760px){.nav{min-height:72px}.nav-links{gap:14px;font-size:12px}.hero-inner{grid-template-columns:1fr;gap:6px;padding-block:60px}.hero-art{display:none}.section{padding-block:50px}.info-grid{grid-template-columns:1fr;gap:25px}.foot{flex-direction:column;align-items:start}.section-head{align-items:start;flex-direction:column}}
-  
-    /* Identidade visual original da DRC Suporte: logo sem sombra para áreas escuras. */
-    .brand{min-height:94px}
-    .brand-logo{display:block;width:205px;height:auto;max-height:86px;object-fit:contain}
-    .brand-fallback{display:none;align-items:center;gap:12px}
-    .hero-art{height:340px}
-    .orb{width:min(100%,465px);height:310px;padding:30px;border-radius:30px;background:linear-gradient(135deg,#0a223e,#12375c);border:1px solid #63c9ff35;box-shadow:0 0 0 12px #ffffff06,0 24px 70px #0003;display:flex;align-items:center;justify-content:center}
-    .orb .hero-logo{display:block;width:100%;height:auto;max-height:255px;object-fit:contain;filter:drop-shadow(0 8px 16px #0004)}
-    .orb svg{display:none}
-    .floating{right:-2px;bottom:-1px}
-    @media(max-width:760px){
-      .brand{min-height:75px}
-      .brand-logo{width:153px;max-height:69px}
-      .hero-inner{padding-block:50px 45px}
-      .hero-art{display:flex;justify-content:center;height:215px;margin-top:6px}
-      .orb{width:min(100%,330px);height:192px;padding:18px;border-radius:22px}
-      .orb .hero-logo{max-height:155px}
-      .floating{right:2px;bottom:-5px;padding:10px 12px;font-size:11px}
-      .nav-links{font-size:12px;gap:12px}
+    :root{
+      --bg:#eef3f8;
+      --ink:#132235;
+      --muted:#66758b;
+      --line:#dce6f0;
+      --card:#ffffff;
+      --blue:#0b75d8;
+      --blue-2:#35b7ff;
+      --deep:#08111b;
+      --hero-overlay:rgba(3,10,18,.78);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1140px, calc(100% - 32px));margin-inline:auto}
+
+    .textured{
+      color:#fff;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(32,128,214,.28), transparent 36%),
+        linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+        url('/assets/tecido.webp') repeat;
+      background-size:auto, auto, 128px 128px;
+    }
+
+    header.top{position:sticky;top:0;z-index:10;backdrop-filter:blur(6px);border-bottom:1px solid rgba(98,185,255,.16)}
+    .nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px;min-height:72px}
+    .brand-logo{width:210px;height:auto;object-fit:contain}
+    .nav-links{display:flex;gap:26px;color:#d6e6f3;font-weight:600;font-size:14px}
+    .nav-links a:hover{color:#fff}
+
+    .hero{overflow:hidden}
+    .hero-inner{display:grid;grid-template-columns:1.06fr .94fr;gap:38px;align-items:center;padding:56px 0 72px;min-height:520px}
+    .eyebrow{margin:0 0 14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#78d4ff;font-weight:800}
+    h1{margin:0 0 18px;font-size:clamp(34px,5vw,60px);line-height:1.04;letter-spacing:-.045em;color:#fff}
+    .hero-copy{max-width:620px;color:#d4e6f4;font-size:18px;margin:0 0 26px}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:14px;background:linear-gradient(135deg,#39bdfd,#0b74d7);color:#fff;font-weight:800;box-shadow:0 14px 30px rgba(10,64,111,.28)}
+
+    .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+    .hero-panel{
+      width:min(100%, 610px);
+      min-height:330px;
+      padding:28px;
+      border-radius:34px;
+      border:1px solid rgba(77,164,233,.24);
+      box-shadow:0 20px 48px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.03);
+      background:
+        linear-gradient(rgba(7,13,19,.18), rgba(7,13,19,.18)),
+        url('/assets/tecido.webp') repeat;
+      background-size:auto, 128px 128px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-panel::before{
+      content:"";
+      position:absolute;inset:0;
+      border-radius:inherit;
+      box-shadow:0 0 0 22px rgba(12,93,158,.10);
+      pointer-events:none;
+    }
+    .hero-logo{
+      width:min(100%, 520px);
+      height:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 12px 26px rgba(0,0,0,.25));
+    }
+    .hero-note{position:absolute;right:8px;bottom:8px;background:rgba(255,255,255,.96);color:#0c2238;border-radius:18px;padding:18px 20px;box-shadow:0 18px 40px rgba(0,0,0,.20);max-width:272px}
+    .hero-note strong{display:block;font-size:15px;margin-bottom:6px}
+    .hero-note span{font-size:14px;color:#5b6f85}
+
+    .section{padding:72px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+    .kicker{margin:0 0 8px;color:#0f67b6;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h2{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-.04em}
+    .sub{margin:12px 0 0;color:var(--muted)}
+    .counter{padding:8px 14px;border-radius:999px;background:#eaf4fe;color:#1361a0;font-weight:800;font-size:12px;white-space:nowrap}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:22px}
+    .card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 14px 28px rgba(12,39,69,.08);transition:transform .15s ease,box-shadow .15s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(12,39,69,.12)}
+    .cover{height:176px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a1b2b,#0c2a48 55%, #0f67b6)}
+    .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.02), rgba(255,255,255,.02)), url('/assets/tecido.webp') repeat;background-size:auto, 128px 128px;opacity:.3}
+    .cover .emoji{font-size:72px;position:relative;z-index:1;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
+    .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+    .card h3{margin:0 0 8px;font-size:22px;letter-spacing:-.02em}
+    .card p{margin:0 0 18px;color:var(--muted);font-size:14px;flex:1}
+    .card-action{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800;color:#0f67b6}
+    .tag{font-size:11px;color:#5a7ea0;background:#edf6fe;border-radius:999px;padding:6px 10px;font-weight:700}
+
+    .info{padding:42px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+    .info-item{display:flex;gap:12px}
+    .info-icon{flex:0 0 40px;height:40px;border-radius:12px;background:#eaf4fe;color:#0f67b6;font-weight:900;display:grid;place-items:center}
+    .info h3{margin:0 0 6px;font-size:15px}
+    .info p{margin:0;color:var(--muted);font-size:13px}
+
+    footer{padding:28px 0;border-top:1px solid rgba(98,185,255,.16)}
+    .foot{display:flex;justify-content:space-between;gap:24px;align-items:start;color:#d5e5f2}
+    .foot strong{color:#fff}
+    .disclosure{max-width:720px;font-size:13px}
+
+    @media (max-width: 860px){
+      .hero-inner{grid-template-columns:1fr;gap:26px;min-height:auto;padding:40px 0 54px}
+      .hero-visual{order:-1}
+      .hero-panel{min-height:260px;padding:18px 18px 74px}
+      .hero-logo{width:min(100%,420px)}
+      .hero-note{left:50%;right:auto;transform:translateX(-50%);bottom:10px;max-width:86%;width:max-content;padding:16px 18px;text-align:center}
+      .section{padding:56px 0}
+      .info-grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      .wrap{width:min(100% - 24px, 1140px)}
+      .nav{min-height:72px;flex-direction:column;justify-content:center;padding:12px 0}
+      .brand{width:100%;justify-content:center;min-height:auto}
+      .brand-logo{width:170px}
+      .nav-links{width:100%;justify-content:center;gap:18px;font-size:13px}
+      .eyebrow{text-align:center}
+      h1{text-align:center;font-size:34px}
+      .hero-copy{text-align:center;font-size:16px;margin-inline:auto}
+      .hero-copy br{display:none}
+      .hero-text{display:flex;flex-direction:column;align-items:center}
+      .hero-panel{min-height:220px;border-radius:24px;padding:16px 16px 84px}
+      .hero-logo{width:min(100%,340px)}
+      .hero-note{font-size:14px;width:calc(100% - 28px);max-width:none}
+      .section-head{flex-direction:column;align-items:start}
+      .cards{grid-template-columns:1fr}
+      .cover{height:156px}
+      .card-body{padding:20px}
+      .foot{flex-direction:column}
     }
   </style>
-  <link rel="stylesheet" href="/tema-drc.css?v=2">
 </head>
 <body>
-  <header class="top"><nav class="nav wrap" aria-label="Navegação principal">
-    <a class="brand" href="/" aria-label="DRC Suporte, página inicial"><img class="brand-logo" src="/assets/drc-logo.webp" alt="DRC Suporte" onerror="this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://http2.mlstatic.com/D_NQ_NP_887008-MLA75377599252_042024-G.webp'"><span class="brand-fallback"><span class="brandmark">DRC</span><span>DRC SUPORTE</span></span></a>
-    <div class="nav-links"><a href="#listas">Categorias</a><a href="#como-funciona">Como funciona</a></div>
-  </nav></header>
+  <header class="top textured">
+    <nav class="nav wrap" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="DRC Suporte, página inicial">
+        <img class="brand-logo" src="/assets/drc-logo.webp" alt="DRC Suporte" width="900" height="439" />
+      </a>
+      <div class="nav-links">
+        <a href="#listas">Categorias</a>
+        <a href="#como-funciona">Como funciona</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <section class="hero">
+    <section class="hero textured">
       <div class="hero-inner wrap">
-        <div><p class="eyebrow">DRC Suporte • Soluções em Informática</p><h1>Tecnologia e soluções que fazem a diferença.</h1>
+        <div class="hero-text">
+          <p class="eyebrow">Uma seleção da DRC Suporte</p>
+          <h1>Produtos selecionados para o seu dia a dia.</h1>
           <p class="hero-copy">Explore nossas listas de automações, tecnologia e utilidades. Escolha sua categoria e confira os produtos diretamente no Mercado Livre.</p>
-          <a class="primary" href="#listas">Explorar categorias <span aria-hidden="true">↗</span></a>
+          <a class="cta" href="#listas">Explorar categorias ↗</a>
         </div>
-        <div class="hero-art" aria-hidden="true"><div class="orb"><img class="hero-logo" src="/assets/drc-logo.webp" alt="" onerror="this.onerror=function(){this.style.display='none';this.nextElementSibling.style.display='block'};this.src='https://http2.mlstatic.com/D_NQ_NP_887008-MLA75377599252_042024-G.webp'"><svg viewBox="0 0 100 100"><rect x="16" y="22" width="68" height="49" rx="6"/><path d="M24 36h52M39 80h22M50 71v9"/><path d="M34 51h32M50 42v18"/></svg></div><div class="floating">Seleção DRC Suporte<small>Confira nossas listas no Mercado Livre</small></div></div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-panel">
+            <img class="hero-logo" src="/assets/drc-logo.webp" alt="" width="900" height="439" />
+          </div>
+          <div class="hero-note">
+            <strong>Seleção DRC Suporte</strong>
+            <span>Confira nossas listas no Mercado Livre</span>
+          </div>
+        </div>
       </div>
     </section>
+
     <section class="section wrap" id="listas">
-      <div class="section-head"><div><p class="kicker">Nossas recomendações</p><h2>Escolha uma categoria</h2><p>Cada categoria abre uma lista pública que você pode consultar e comprar pelo Mercado Livre.</p></div><span class="counter" id="count">Carregando...</span></div>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Nossas recomendações</p>
+          <h2>Escolha uma categoria</h2>
+          <p class="sub">Cada categoria abre uma lista pública que você pode consultar e comprar pelo Mercado Livre.</p>
+        </div>
+        <span class="counter" id="count">Carregando...</span>
+      </div>
       <div class="cards" id="cards" aria-live="polite"><p>Carregando categorias...</p></div>
     </section>
-    <section class="info" id="como-funciona"><div class="info-grid wrap">
-      <div class="info-item"><span class="info-icon">01</span><div><h3>Explore as categorias</h3><p>Organizamos nossas listas para facilitar sua busca.</p></div></div>
-      <div class="info-item"><span class="info-icon">02</span><div><h3>Confira os produtos</h3><p>Ao clicar, você acessa a lista oficial no Mercado Livre.</p></div></div>
-      <div class="info-item"><span class="info-icon">03</span><div><h3>Compre pela plataforma</h3><p>Pagamento, entrega e atendimento da compra ocorrem no Mercado Livre e com o vendedor.</p></div></div>
-    </div></section>
+
+    <section class="info" id="como-funciona">
+      <div class="info-grid wrap">
+        <div class="info-item"><span class="info-icon">01</span><div><h3>Explore as categorias</h3><p>Organizamos nossas listas para facilitar sua busca.</p></div></div>
+        <div class="info-item"><span class="info-icon">02</span><div><h3>Confira os produtos</h3><p>Ao clicar, você acessa a lista oficial no Mercado Livre.</p></div></div>
+        <div class="info-item"><span class="info-icon">03</span><div><h3>Compre pela plataforma</h3><p>Pagamento, entrega e atendimento da compra ocorrem no Mercado Livre e com o vendedor.</p></div></div>
+      </div>
+    </section>
   </main>
-  <footer><div class="foot wrap"><div><b>DRC Suporte</b><br><span id="year">2026</span> · Todos os direitos reservados.</div><div class="disclosure">Publicidade: nossas listas contêm links de afiliado. Podemos receber comissão por compras qualificadas feitas por meio deles, sem custo adicional para você.</div></div></footer>
+
+  <footer class="textured">
+    <div class="foot wrap">
+      <div><strong>DRC Suporte</strong><br><span id="year"></span> · Todos os direitos reservados.</div>
+      <div class="disclosure">Publicidade: nossas listas contêm links de afiliado. Podemos receber comissão por compras qualificadas feitas por meio deles, sem custo adicional para você.</div>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
     (async function(){
-      const area=document.getElementById('cards'),count=document.getElementById('count');
-      try{
-        const response=await fetch('./listas.json',{cache:'no-cache'});
-        if(!response.ok)throw Error('Não foi possível carregar as listas');
-        const data=await response.json();
-        const listas=(Array.isArray(data)?data:[]).filter(item=>item && item.ativa!==false && typeof item.url==='string' && /^https:\/\/(meli\.la|(?:www\.)?mercadolivre\.com\.br)\//i.test(item.url));
+      const area = document.getElementById('cards');
+      const count = document.getElementById('count');
+      try {
+        const response = await fetch('./listas.json', {cache:'no-cache'});
+        if(!response.ok) throw new Error('Falha ao carregar as listas');
+        const data = await response.json();
+        const listas = (Array.isArray(data) ? data : []).filter(item => item && item.ativa !== false && typeof item.url === 'string');
         area.replaceChildren();
-        count.textContent=listas.length+' '+(listas.length===1?'categoria':'categorias');
-        if(!listas.length){area.innerHTML='<p class="empty">Ainda não há categorias disponíveis. Volte em breve.</p>';return;}
-        listas.forEach(item=>{
-          const card=document.createElement('a');card.className='card';card.href=item.url;card.target='_blank';card.rel='noopener sponsored';card.setAttribute('aria-label','Abrir lista '+String(item.nome||'Categoria')+' no Mercado Livre');
-          const cover=document.createElement('div');cover.className='cover';
-          const pict=document.createElement('span');pict.className='pict';pict.textContent=item.icone||'🛍️';pict.setAttribute('aria-hidden','true');cover.append(pict);
-          const body=document.createElement('div');body.className='card-body';
-          const title=document.createElement('h3');title.textContent=item.nome||'Categoria';
-          const description=document.createElement('p');description.textContent=item.descricao||'Confira os produtos selecionados nesta lista.';
-          const action=document.createElement('div');action.className='card-action';
-          const label=document.createElement('span');label.textContent='Ver lista no Mercado Livre ↗';
-          const tag=document.createElement('span');tag.className='tag';tag.textContent='Lista pública';
-          action.append(label,tag);body.append(title,description,action);card.append(cover,body);area.append(card);
+        count.textContent = listas.length + ' ' + (listas.length === 1 ? 'categoria' : 'categorias');
+        if(!listas.length){
+          area.innerHTML = '<p>Ainda não há categorias disponíveis.</p>';
+          return;
+        }
+        listas.forEach(item => {
+          const card = document.createElement('a');
+          card.className = 'card';
+          card.href = item.url;
+          card.target = '_blank';
+          card.rel = 'noopener sponsored';
+          card.setAttribute('aria-label', 'Abrir lista ' + String(item.nome || 'Categoria') + ' no Mercado Livre');
+
+          const cover = document.createElement('div');
+          cover.className = 'cover';
+          const emoji = document.createElement('span');
+          emoji.className = 'emoji';
+          emoji.textContent = item.icone || '🛍️';
+          cover.appendChild(emoji);
+
+          const body = document.createElement('div');
+          body.className = 'card-body';
+          const title = document.createElement('h3');
+          title.textContent = item.nome || 'Categoria';
+          const desc = document.createElement('p');
+          desc.textContent = item.descricao || 'Confira os produtos selecionados nesta lista.';
+          const action = document.createElement('div');
+          action.className = 'card-action';
+          const label = document.createElement('span');
+          label.textContent = 'Ver lista no Mercado Livre ↗';
+          const tag = document.createElement('span');
+          tag.className = 'tag';
+          tag.textContent = 'Lista pública';
+          action.append(label, tag);
+          body.append(title, desc, action);
+          card.append(cover, body);
+          area.append(card);
         });
-      }catch(err){count.textContent='';area.innerHTML='<p class="empty">Não foi possível carregar as categorias neste momento. Tente novamente mais tarde.</p>';}
+      } catch (e) {
+        count.textContent = '';
+        area.innerHTML = '<p>Não foi possível carregar as categorias neste momento.</p>';
+      }
     })();
   </script>
 </body>
