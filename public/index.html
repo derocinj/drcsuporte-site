@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b1c30">
   <meta name="description" content="Listas de produtos selecionados pela DRC Suporte. Explore categorias e confira os anúncios no Mercado Livre.">
-  <title>DRC Suporte | Produtos selecionados</title>
+  <title>DRC Suporte | Soluções em Informática e Achados</title>
+  <link rel="canonical" href="https://drcsuporte.com.br/">
+  <meta property="og:title" content="DRC Suporte | Soluções em Informática e Achados">
+  <meta property="og:description" content="Confira nossas listas de produtos e automações selecionadas no Mercado Livre.">
   <style>
     :root{--navy:#0b1c30;--blue:#155fa5;--cyan:#38bdf8;--ink:#16243a;--muted:#63738a;--line:#e0e8f1;--bg:#f5f8fc;--white:#fff}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
@@ -50,25 +53,45 @@
     footer{background:#0b1c30;color:#bdcede;padding:30px 0;font-size:13px}.foot{display:flex;gap:18px;justify-content:space-between;align-items:center}
     .foot b{color:white}.disclosure{max-width:700px}.empty{border:1px dashed #acc1d4;color:var(--muted);padding:28px;border-radius:16px;background:white}
     @media(max-width:760px){.nav{min-height:72px}.nav-links{gap:14px;font-size:12px}.hero-inner{grid-template-columns:1fr;gap:6px;padding-block:60px}.hero-art{display:none}.section{padding-block:50px}.info-grid{grid-template-columns:1fr;gap:25px}.foot{flex-direction:column;align-items:start}.section-head{align-items:start;flex-direction:column}}
+  
+    /* Identidade visual original da DRC Suporte: logo sem sombra para áreas escuras. */
+    .brand{min-height:94px}
+    .brand-logo{display:block;width:205px;height:auto;max-height:86px;object-fit:contain}
+    .brand-fallback{display:none;align-items:center;gap:12px}
+    .hero-art{height:340px}
+    .orb{width:min(100%,465px);height:310px;padding:30px;border-radius:30px;background:linear-gradient(135deg,#0a223e,#12375c);border:1px solid #63c9ff35;box-shadow:0 0 0 12px #ffffff06,0 24px 70px #0003;display:flex;align-items:center;justify-content:center}
+    .orb .hero-logo{display:block;width:100%;height:auto;max-height:255px;object-fit:contain;filter:drop-shadow(0 8px 16px #0004)}
+    .orb svg{display:none}
+    .floating{right:-2px;bottom:-1px}
+    @media(max-width:760px){
+      .brand{min-height:75px}
+      .brand-logo{width:153px;max-height:69px}
+      .hero-inner{padding-block:50px 45px}
+      .hero-art{display:flex;justify-content:center;height:215px;margin-top:6px}
+      .orb{width:min(100%,330px);height:192px;padding:18px;border-radius:22px}
+      .orb .hero-logo{max-height:155px}
+      .floating{right:2px;bottom:-5px;padding:10px 12px;font-size:11px}
+      .nav-links{font-size:12px;gap:12px}
+    }
   </style>
 </head>
 <body>
   <header class="top"><nav class="nav wrap" aria-label="Navegação principal">
-    <a class="brand" href="/" aria-label="DRC Suporte, página inicial"><span class="brandmark">DRC</span><span>DRC SUPORTE</span></a>
+    <a class="brand" href="/" aria-label="DRC Suporte, página inicial"><img class="brand-logo" src="/assets/drc-logo.webp" alt="DRC Suporte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="brand-fallback"><span class="brandmark">DRC</span><span>DRC SUPORTE</span></span></a>
     <div class="nav-links"><a href="#listas">Categorias</a><a href="#como-funciona">Como funciona</a></div>
   </nav></header>
   <main>
     <section class="hero">
       <div class="hero-inner wrap">
         <div><p class="eyebrow">Uma seleção da DRC Suporte</p><h1>Produtos selecionados para o seu dia a dia.</h1>
-          <p class="hero-copy">Explore nossas listas de tecnologia, escritório e utilidades. Escolha uma categoria e veja todos os produtos diretamente no Mercado Livre.</p>
+          <p class="hero-copy">Explore nossas listas de automações, tecnologia e utilidades. Escolha sua categoria e confira os produtos diretamente no Mercado Livre.</p>
           <a class="primary" href="#listas">Explorar categorias <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-art" aria-hidden="true"><div class="orb"><svg viewBox="0 0 100 100"><rect x="16" y="22" width="68" height="49" rx="6"/><path d="M24 36h52M39 80h22M50 71v9"/><path d="M34 51h32M50 42v18"/></svg></div><div class="floating">Listas organizadas<small>Compra segura no Mercado Livre</small></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orb"><img class="hero-logo" src="/assets/drc-logo.webp" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg viewBox="0 0 100 100"><rect x="16" y="22" width="68" height="49" rx="6"/><path d="M24 36h52M39 80h22M50 71v9"/><path d="M34 51h32M50 42v18"/></svg></div><div class="floating">Listas organizadas<small>Compra segura no Mercado Livre</small></div></div>
       </div>
     </section>
     <section class="section wrap" id="listas">
-      <div class="section-head"><div><p class="kicker">Nossas recomendações</p><h2>Escolha uma categoria</h2><p>Cada categoria leva à respectiva lista no Mercado Livre.</p></div><span class="counter" id="count">Carregando...</span></div>
+      <div class="section-head"><div><p class="kicker">Nossas recomendações</p><h2>Escolha uma categoria</h2><p>Cada categoria abre uma lista pública que você pode consultar e comprar pelo Mercado Livre.</p></div><span class="counter" id="count">Carregando...</span></div>
       <div class="cards" id="cards" aria-live="polite"><p>Carregando categorias...</p></div>
     </section>
     <section class="info" id="como-funciona"><div class="info-grid wrap">
