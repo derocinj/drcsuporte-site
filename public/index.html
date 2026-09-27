@@ -93,6 +93,10 @@
     .cover{height:176px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a1b2b,#0c2a48 55%, #0f67b6)}
     .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.02), rgba(255,255,255,.02)), url('/assets/tecido.webp') repeat;background-size:auto, 128px 128px;opacity:.3}
     .cover .emoji{font-size:72px;position:relative;z-index:1;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
+    .cover.has-image{background:linear-gradient(118deg,#0a1b2b,#0f4269 65%,#145d95)}
+    .cover.has-image::before{opacity:.14}
+    .cover .product-photo{position:relative;z-index:1;width:min(73%,330px);height:152px;object-fit:contain;object-position:center;background:#fff;border-radius:16px;padding:9px;box-shadow:0 12px 30px rgba(0,0,0,.24)}
+    .cover.has-image .emoji{display:none}
     .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
     .card h3{margin:0 0 8px;font-size:22px;letter-spacing:-.02em}
     .card p{margin:0 0 18px;color:var(--muted);font-size:14px;flex:1}
@@ -229,6 +233,17 @@
           emoji.className = 'emoji';
           emoji.textContent = item.icone || '🛍️';
           cover.appendChild(emoji);
+          if (typeof item.imagem === 'string' && /^https:\/\/http2\.mlstatic\.com\//.test(item.imagem)) {
+            const foto = document.createElement('img');
+            foto.className = 'product-photo';
+            foto.src = item.imagem;
+            foto.alt = 'Equipamento de automação residencial';
+            foto.loading = 'lazy';
+            foto.decoding = 'async';
+            foto.addEventListener('error', () => { foto.remove(); cover.classList.remove('has-image'); });
+            cover.appendChild(foto);
+            cover.classList.add('has-image');
+          }
 
           const body = document.createElement('div');
           body.className = 'card-body';
@@ -240,10 +255,7 @@
           action.className = 'card-action';
           const label = document.createElement('span');
           label.textContent = 'Ver lista no Mercado Livre ↗';
-          const tag = document.createElement('span');
-          tag.className = 'tag';
-          tag.textContent = 'Lista pública';
-          action.append(label, tag);
+          action.append(label);
           body.append(title, desc, action);
           card.append(cover, body);
           area.append(card);
