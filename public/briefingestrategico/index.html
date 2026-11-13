@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a203a">
+  <meta name="description" content="Briefing estratégico de marketing: responda online e baixe o documento original preenchido em PDF.">
+  <title>Briefing Estratégico | NV Produções × DRC Suporte</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="brand"><span class="brand-symbol" aria-hidden="true">NV<span></span></span><span><strong>NV PRODUÇÕES</strong><small>Estratégia • Criatividade • Resultados</small></span></div>
+      <div class="brand brand-right"><span class="brand-cross">×</span><span><strong>DRC SUPORTE</strong><small>Soluções em Informática</small></span></div>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div><p class="eyebrow">ESTRATÉGIA / POSICIONAMENTO / CRESCIMENTO</p><h1>Briefing<br><em>Estratégico</em></h1><p class="hero-sub">de marketing</p><div class="accent-line"></div><p class="hero-desc">Vamos conhecer a DRC por dentro. Responda ao questionário com tranquilidade e, ao final, baixe o <strong>PDF original preenchido</strong> com todas as respostas.</p>
+          <div class="hero-tags"><span>30 perguntas</span><span>7 seções</span><span>PDF para download</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="ring r4"></div><div class="hero-mark">NV<span>×</span>DRC</div></div>
+      </div>
+    </section>
+    <div class="container content-grid">
+      <aside class="sidebar" aria-label="Navegação do questionário">
+        <div class="sidecard">
+          <div class="side-head"><small>SEU PROGRESSO</small><strong id="progressPercent">0%</strong></div>
+          <div class="progress-track" aria-label="Progresso do questionário"><div id="progressFill"></div></div>
+          <p class="progress-copy"><strong id="answeredCount">0</strong> de 30 perguntas respondidas</p>
+          <nav id="sectionNav" class="section-nav"></nav>
+          <button id="clearBtn" type="button" class="text-button">Limpar respostas deste aparelho</button>
+        </div>
+        <div class="privacy"><span aria-hidden="true">♧</span><strong>Suas respostas são privadas</strong><p>Nada é enviado para um servidor. O rascunho é salvo apenas neste navegador até você limpar.</p></div>
+      </aside>
+      <div class="form-area">
+        <div class="intro-card"><span class="section-count">ANTES DE COMEÇAR</span><h2>Vamos conhecer a DRC por dentro.</h2><p>Este briefing foi preparado pela NV Produções para conhecer a DRC Suporte, seus serviços, público, diferenciais e prioridades comerciais. As respostas serão utilizadas como base para o diagnóstico, o posicionamento e o planejamento de conteúdos e ações de marketing.</p><p>Responda com clareza, sem necessidade de linguagem técnica. Se alguma pergunta não se aplicar, escreva <strong>“Não se aplica”</strong>.</p><label class="responsavel-label" for="responsavel">Nome de quem responderá ao briefing <span aria-label="obrigatório">*</span></label><input id="responsavel" name="responsavel" type="text" required autocomplete="name" placeholder="Digite o nome do responsável" maxlength="100"><span class="inline-error" id="responsavelError" role="alert"></span></div>
+        <form id="briefingForm" novalidate>
+          <div id="sections"></div>
+          <section class="finish-card" id="finalizar"><div class="finish-icon" aria-hidden="true">✓</div><span class="section-count">ETAPA FINAL</span><h2>Pronto para gerar seu PDF?</h2><p>Confira as respostas. Ao clicar no botão, o sistema preencherá o <strong>briefing original da NV Produções</strong> e criará um arquivo para baixar. Respostas extensas ficam registradas integralmente em páginas complementares, sem cortes.</p><div class="finish-stats"><span id="finalCount">0 de 30 respostas</span><span>Arquivo PDF A4</span></div><div class="actions"><button id="generateBtn" type="submit" class="primary-button"><span aria-hidden="true">↓</span> Gerar e baixar PDF respondido</button><a class="secondary-button" href="./modelo.pdf" download="Briefing_Estrategico_NV_Producoes_Original.pdf">Baixar PDF em branco</a></div><p id="status" class="status" role="status" aria-live="polite"></p></section>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer><div class="container"><strong>NV PRODUÇÕES</strong> <span>×</span> DRC SUPORTE <span class="footer-right">Ji-Paraná • Rondônia • Briefing confidencial</span></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
